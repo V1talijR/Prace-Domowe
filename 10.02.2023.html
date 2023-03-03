@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <span id="logi"></span>
+        <script>
+            let info = document.getElementById("logi");
+
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+            function showPosition (position){
+                var link = `https://www.google.pl/maps/@${position.coords.latitude},${position.coords.longitude},15z`;
+                console.log("Latitude: " + position.coords.latitude);
+                console.log("Longitude:" + position.coords.longitude);
+                info.innerHTML = "Latitude: " + position.coords.latitude + "<br>" + "Longitude: " + position.coords.longitude + "<br>Link:" + link;
+            }
+        </script>
+    </body>
+</html>
